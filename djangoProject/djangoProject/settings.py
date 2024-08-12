@@ -55,7 +55,7 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'] # رو بهش معرفی می کنم دایرکتوری templete
+        'DIRS': [BASE_DIR / 'templates',BASE_DIR / 'templete'] # رو بهش معرفی می کنم دایرکتوری templete
         ,
         'APP_DIRS': True,
         'OPTIONS': {

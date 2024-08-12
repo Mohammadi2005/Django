@@ -20,7 +20,8 @@ from django.urls import include  # برای اضافه کردن URL باید ncl
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
+
 #  با این خط می تونم به URL های app home سترسی داشت
 # اسم URL home میزارم و URL های App home و باهاش include می کنم
 #  بجای home می تونم هیچی نزارم

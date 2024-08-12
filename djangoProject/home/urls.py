@@ -4,5 +4,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('hello/', views.say_hello),
+    path('hello/', views.say_hello),  #  وقتی hello رو جست و جو کنم say_hello اجرا میشه
+    path('', views.home)
 ]
