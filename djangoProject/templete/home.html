@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>home page</title>
-</head>
-<body>
+{% extends 'base.html' %}  <!-- این میگه که اطلاعات باید برای استفاده به فایل base.html منتقل بشه -->
 
+{% block block_title %}
+    Home
+{% endblock %}
+
+{% block pages_html %}  <!-- اینجا مشخص می کنم کد ها توی چه بلاکی از فایل base قرار بگیره -->
     <h3>welcom to home page</h3>
-
-</body>
-</html>
+    {{ todo }}
+    {% for item in todo %}  <!-- از طریق نام کلید دایرکتوری به اطلاعاتش می تونیم دسترسی داشته باشیم -->
+        <h3>{{ item.id }} _ {{ item.title }}</h3>
+        <small>{{ item.created }}</small>
+        <p>{{ item.body }}</p>
+    {% endfor %}
+{% endblock %}

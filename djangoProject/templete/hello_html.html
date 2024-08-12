@@ -1,15 +1,18 @@
 <!-- باید فایل رو به پروزه بشناسونم -->
 <!-- باید برم به سیتینگ پروزه و توی بخش templete معرفیش کنم 'DIRS' -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HELLO</title>
-</head>
-<body>
+{% extends 'base.html' %}  <!-- این میگه که اطلاعات باید برای استفاده به فایل base.html منتقل بشه -->
 
-    <h3>hello user to jango </h3>
+{% block block_title %}
+     Hello
+{% endblock %}
+{% block pages_html %}  <!-- اینجا مشخص می کنم کد ها توی چه بلاکی از فایل base قرار بگیره -->
+    <h3>welcom {{ name }}</h3>
 
-</body>
-</html>
+    {% if  name  == 'amir hossein' %}  <!-- تگ ها این اجازه رو بهم میده تا کد های پایتونی رو داخل اچ تی ام ال استفاده کنم-->
+        <h3>hello admin {{ name }} ... </h3> {% endif %}   <!-- اید شرط رو ببندیم -->
+
+    <h4>hello user {{ name }} ... </h4>  <!-- رای استفاده از متغیر های ارسال شده باید اونا رو توی دو تا اکولاد بزارم -->
+
+    <p>{{ name|upper }}</p>  <!-- فیلتر روی وریبل ها یک کار خاص رو انجام میده مثلا یک متد رو اعمال میکنه-->
+{% endblock %}
 
