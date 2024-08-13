@@ -6,9 +6,10 @@
 
 {% block pages_html %}  <!-- اینجا مشخص می کنم کد ها توی چه بلاکی از فایل base قرار بگیره -->
     <h3>welcom to home page</h3>
-    {{ todo }}
+    {{ todo }}<br>
     {% for item in todo %}  <!-- از طریق نام کلید دایرکتوری به اطلاعاتش می تونیم دسترسی داشته باشیم -->
-        <h3>{{ item.id }} _ {{ item.title }}</h3>
+        <a href = "{% url 'ditals' item.id %}">{{ item.id }} _ {{ item.title }}</a><br>
+<!-- تگ a عبارت داخلش رو به یک لینک تبدیل می کنه و href هم اسم ادرس لینک رو مشخص میکنه که بعدش ارگومان های ادرس باید با یک فاصله ازهم قرار بگیرن -->
         <small>{{ item.created }}</small>
         <p>{{ item.body }}</p>
     {% endfor %}

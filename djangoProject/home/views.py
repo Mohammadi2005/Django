@@ -12,3 +12,7 @@ def say_hello(request): # مه ی تابع های view باید ارگومان �
    person = {'name': 'amir hossein'}  #  برای کار کردن با اطلاعات باید اطلاعات تایپشون دیکشنری باشه
 #   return HttpResponse('Hello World!')
    return render(request,'hello_html.html' , context = person) #  برای فرستادن اطلاعات به صفحه html اید اونا رو توی context
+
+def ditals(request, todo_id):
+   todo = Todo.objects.get(id=todo_id)  #  متد get یک رکورد خاص از جدول رو میکیره
+   return render(request, 'ditals.html', {'todo':todo})
