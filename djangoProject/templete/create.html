@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block pages_html %}
+    <h3>Create Todo</h3>
+    <!-- novalidate اعتبار سنجی مرور گر رو غیر فعال میکنه و این باعث میشه اعتبار سنج چنگو فعالیت کنه -->
+    <form action="" method="post" novalidate>  <!-- باید ادرس جایی که بعد از کلیک می خوام برم رو بدم که اگر خالی باشه یعنی به همون ادرسی بریم که ازش اومدیم action برای -->
+        {% csrf_token %}  <!-- از حمله csrf جلو گیری میکنه -->
+        {{ form.as_table }}  <!-- فرمی که به این فایل ارسال شده رو به شکل جدول نمایش میدم -->
+        <input type="submit" value="Create Todo">
+    </form>
+{% endblock %}

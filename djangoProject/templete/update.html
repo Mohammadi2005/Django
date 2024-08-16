@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block block_title %}
+    Update
+{% endblock %}
+{% block pages_html %}
+    <h3>Update Todo</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}

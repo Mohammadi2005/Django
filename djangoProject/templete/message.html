@@ -1,0 +1,7 @@
+{% if messages %}  <!-- بررسی میکنه پیامی وجود داره یانه -->
+
+    {% for mes in messages %}  <!-- اگر پیامی وجود داشت نمایشش میده -->
+        <p class = 'alert alert-{{ mes.tags }}'>{{ mes }}</p>  <!-- class به پیام استایل میده -->
+    {% endfor %}
+
+{% endif %}
